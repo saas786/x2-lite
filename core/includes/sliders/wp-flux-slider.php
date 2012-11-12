@@ -89,7 +89,7 @@ class wp_flux_slider extends wp_zliders{
 	*/
 	public function css(){
 	    
-        $img_path = get_template_directory_uri().'/core/includes/mahype-zlider/flux-slider/themes/default/';
+        $img_path = get_template_directory_uri().'/core/includes/sliders/flux-slider/themes/default/';
  
         // Slide Controlls
         $html = chr(13) . '<!-- WP Zliders - flux Slider CSS //-->' . chr(13);

@@ -129,10 +129,10 @@ class x2{
 		require_once($this->require_path('/core/includes/wp-detect/detect.php'));
         
         // Nivo Slider
-        require_once($this->require_path('/core/includes/mahype-zlider/wp-nivo-slider.php'));
+        require_once($this->require_path('/core/includes/sliders/wp-nivo-slider.php'));
         
         // Flux Slider
-        require_once($this->require_path('/core/includes/mahype-zlider/wp-flux-slider.php'));
+        require_once($this->require_path('/core/includes/sliders/wp-flux-slider.php'));
     }
 
 	###  js
@@ -185,9 +185,9 @@ class x2{
 	/** check if it's a child theme or parent theme and return the correct path */
 	function require_path($path){
 	if( get_template_directory() != get_stylesheet_directory() && is_file(get_stylesheet_directory() . $path) ): 	
-        return get_stylesheet_directory() . $path;
+        return STYLESHEETPATH . $path;
     else:
-        return get_template_directory() . $path;
+        return TEMPLATEPATH . $path;
     endif;
 	}
     

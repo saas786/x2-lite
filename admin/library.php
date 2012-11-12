@@ -575,31 +575,30 @@ function top_level_settings() {
 	?>
 
 	<div class="wrap">
-		
 		<div id="icon-themes" class="icon32"><br></div>
-		<h2>Theme Options</h2>
+		<h2>x2<?php if(!defined('is_pro')){ echo " lite"; } ?> - Theme Options</h2>
 		<p style="margin: 30px 0; font-size: 15px;">
 			
 			Need help? <a class="button secondary" href="http://support.themekraft.com/categories/20065392-x2" target="_blank">Browse the Documentation</a> <a class="button secondary" href="http://themekraft.com/shop/premium-support" target="_blank" title="Get personal help by our product experts.">Get Premium Support</a>
 			<span style="font-size: 13px; float:right;">Proudly brought to you by <a href="http://themekraft.com/" target="_blank">Themekraft</a>.</span></p> 
-		
+            <?php do_action('cc_after_help_buttons');?>
 		<form method="post" action="options.php">
 		<?php settings_fields( 'x2_options' ); ?>
 	
 		<div id="config-tabs">
 			<ul>
-				<?php 
+				<?php // Add all the tabs
 				$groups = cap_get_options();
-				foreach( $groups as $group ) :
+				foreach( $groups as $group ) : 
 				?>
 					<li><a href='#<?php echo $group->id; ?>'><?php echo $group->name; ?></a></li>
 				<?php endforeach; 
-                $cap_getpro = __('Get the Pro','cc');
-				if(defined('is_pro')){
-					$cap_getpro = __('Support','cc');
-				}
-				echo " <li><a href='#cap_getpro'>$cap_getpro</a></li>";
-                ?>
+				
+				// Add the last tab "Get the Pro" here now
+				if(!defined('is_pro')){
+	                $cap_getpro = __('Get the Pro','cc');
+					echo "<li><a href='#cap_getpro'>$cap_getpro</a></li>";
+				} ?>
 			</ul>
 			<?php
 			foreach( $groups as $group ) : ?>

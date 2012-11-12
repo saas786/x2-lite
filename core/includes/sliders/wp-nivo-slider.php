@@ -131,7 +131,7 @@ class wp_nivo_slider extends wp_zliders{
     */
     public function css(){
         
-        $img_path = get_template_directory_uri().'/core/includes/mahype-zlider/nivo-slider/themes/default/';
+        $img_path = get_template_directory_uri().'/core/includes/sliders/nivo-slider/themes/default/';
  
         // Slide Controlls
         $html = chr(13) . '<!-- WP Zliders - Nivo Slider CSS //-->' . chr(13);

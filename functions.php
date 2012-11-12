@@ -840,5 +840,15 @@ function cc_add_free_text(){
         echo '<div class="free-version-message">This is the free version of x2. Get the pro version <a href="http://themekraft.com/shop/x2-premium-wordpress-theme/">here</a></div>';
     }
 }
-add_action('bp_before_access', 'cc_add_free_text');
+add_action('cc_after_help_buttons', 'cc_add_free_text');
+
+/**
+ * Add admin styles
+ */
+
+function cc_add_admin_styles(){
+    wp_enqueue_style('admin_x2', get_template_directory_uri() . '/_inc/css/admin.css');
+}
+
+add_action('admin_init', 'cc_add_admin_styles');
 ?>

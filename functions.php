@@ -837,7 +837,7 @@ function cc_get_pro_version(){
 }
 function cc_add_free_text(){
     if(!defined('is_pro')){
-        echo '<div class="free-version-message">This is the free version of x2. Get the pro version <a href="http://themekraft.com/shop/x2-premium-wordpress-theme/">here</a></div>';
+        echo '<div class="free-version-message">This is the free version of x2. Get the <a href="http://themekraft.com/shop/x2-premium-wordpress-theme/" target="_blank" title="Get the full version of x2 WordPress Theme.">full version here.</a></div>';
     }
 }
 add_action('cc_after_help_buttons', 'cc_add_free_text');

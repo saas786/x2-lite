@@ -785,20 +785,6 @@ function cap_get_options() {
 			"bg_footer_widget_border", 
 			false, 
 			'end'),
-			new BooleanOption(
-			"Show credits links in footer", 
-			"Show the credits liks in the footer.", 
-			"disable_credits_footer", 
-			true, 
-			'start', 
-			'Credit links'),
-		new TextOption(
-			"Your own credits links in footer", 
-			"Write in your own credits - links - text. You can use HTML.", 
-			"my_credits_footer", 
-			"",
-			'',
-			'end'),
 		)
 		),
 	new Group ("BuddyPress", "buddypress",

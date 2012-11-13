@@ -2100,7 +2100,11 @@ function dynamic_css() {
 			margin-left: 12px;
 		}
 		#access.sticky {
-		    top: <?php if( $cap->admin_bar_position == "show") { echo '28'; } else { echo '0'; } ?>px; 
+			<?php  if(!defined('is_pro')) { ?>
+				top: 28px;
+			<?php } else { ?>
+		    	top: <?php if( $cap->admin_bar_position == "show") { echo '28'; } else { echo '0'; } ?>px;
+		    <?php } ?> 
 			position: fixed;
 			z-index: 99999;
 			background: #<?php echo $cap->bg_body_color; ?>;

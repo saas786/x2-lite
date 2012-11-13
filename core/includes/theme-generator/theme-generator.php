@@ -961,8 +961,8 @@ class x2_Theme_Generator{
 	  	<br />
 		<?php if($cap->disable_credits_footer != false || !defined('is_pro')){ ?>
 			<br />
-			<div class="credits"><?php printf( __( '%s is proudly powered by <a class="credits" href="http://wordpress.org">WordPress</a> and <a class="credits" href="http://buddypress.org">BuddyPress</a>. ', 'cc' ), bloginfo('name') ); ?>
-			<?php _e('Just another <a class="credits" href="http://themekraft.com/all-themes/" target="_blank" title="Wordpress Theme" alt="WordPress Theme">WordPress Theme</a> developed by Themekraft.','cc') ?></div>
+			<div class="credits"><?php printf( __( '%s is proudly powered by <a class="credits" href="http://wordpress.org">WordPress.</a> ', 'cc' ), bloginfo('name') ); ?>
+			<?php _e('Theme developed by <a class="credits" href="http://themekraft.com/" target="_blank" title="Wordpress Themes" alt="WordPress Themes">Themekraft.</a>','cc') ?></div>
 		<?php } ?>
 		<?php if($cap->my_credits_footer != '' ){ ?>
 			<br />

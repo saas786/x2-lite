@@ -96,10 +96,13 @@ class x2_Theme_Generator{
 	 */	
 	function body_badge(){
 		global $cap;	
-					
-		if( !$cap->logo ) { 
-			echo '<a class="body_badge_link" href="'.site_url().'" title="yo">This is your custom badge text! :)</a><div class="badge_body"><span class="badge_text"></span></div></a>';
-		}
+		if(!defined('is_pro')):
+			return;
+		else:			
+			if( !$cap->logo ) { 
+				echo '<a class="body_badge_link" href="'.site_url().'" title="yo">This is your custom badge text! :)</a><div class="badge_body"><span class="badge_text"></span></div></a>';
+			}
+		endif;
 	}
 
 	/**

@@ -531,7 +531,7 @@ if($cap->buddydev_search == true && defined('BP_VERSION') && function_exists('bp
             <?php locate_template( array( 'members/members-loop.php' ), true ) ;  ?>
             <?php global $members_template;
             if($members_template->total_member_count>1 && !empty($_REQUEST['search-terms'])):?>
-                <a href="<?php echo bp_get_root_domain().'/'.BP_MEMBERS_SLUG.'/?s='.$_REQUEST['search-terms']?>" ><?php _e(sprintf("View all %d matched Members",$members_template->total_member_count),"cc");?></a>
+                <a href="<?php echo bp_get_root_domain().'/'.BP_MEMBERS_SLUG.'/?s='.$_REQUEST['search-terms']?>" ><?php _e("View all matched Members","cc");?></a>
             <?php endif; ?>
         </div>
         <?php    
@@ -830,7 +830,7 @@ function x2_list_posts($atts,$content = null) {
 }
 
 function cc_get_pro_version(){
-   $pro_enabler = TEMPLATEPATH . DIRECTORY_SEPARATOR . '_pro' . DIRECTORY_SEPARATOR . 'pro-enabler.php';
+   $pro_enabler = get_template_directory() . DIRECTORY_SEPARATOR . '_pro' . DIRECTORY_SEPARATOR . 'pro-enabler.php';
    if(file_exists($pro_enabler)){
        require_once $pro_enabler;
    }

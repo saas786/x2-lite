@@ -150,45 +150,48 @@ function dynamic_css() {
 			<?php } ?>
 		}
 		
-		/* the badge in the upper corner, if activated in the theme settings */ 
-		.badge_body {
-			position: absolute;
-			left: 0;
-			<?php if ( $cap->admin_bar_position == "hide" ) { ?>
-				top: 0; 
-			<?php } else { ?>
-				top: 28px; 
-			<?php } ?>	 
-			width: 150px;
-			height: 150px;
-			background: url('<?php 
-				if ( $cap->body_badge_img != "" ) { echo $cap->body_badge_img; } 
-				else { echo get_template_directory_uri().'/images/badge.png'; } 
-				?>') no-repeat scroll top left transparent;
-		}
-		.badge_text {
-			margin: 50px 10px 0 -13px;
-			text-align: center;
-			color: #<?php echo $cap->badge_text_color; ?>;
-			  -webkit-transform: rotate(-45deg);  /* Safari 3.1+, Chrome */
-			     -moz-transform: rotate(-45deg);  /* Firefox 3.5-15 */
-			      -ms-transform: rotate(-45deg);  /* IE9+ */
-			       -o-transform: rotate(-45deg);  /* Opera 10.5-12.00 */
-			          transform: rotate(-45deg);  /* Firefox 16+, Opera 12.50+ */			
-			/* ie7 and 8 */
-			margin: 7px 10px 0px 3px\9;
-			/* ie8 */
-		    -ms-filter: "progid:DXImageTransform.Microsoft.Matrix(M11=0.70710678, M12=0.70710678, M21=-0.70710678, M22=0.70710678,sizingMethod='auto expand')"; /* IE8 */
-			/* ie7 */
-			filter: progid:DXImageTransform.Microsoft.Matrix(M11=0.70710678, M12=0.70710678, M21=-0.70710678, M22=0.70710678,sizingMethod='auto expand');
-		}
-		.badge_text:hover {
-			color: #<?php echo $cap->badge_text_color_hover; ?>;
-		}
-		@media only screen and (max-width: 1150px) {
-			/* hide the body badge */
-			.body_badge_link, .badge_body {display:none;}
-		}
+		<?php if(defined('is_pro')): ?>
+			/* the badge in the upper corner, if activated in the theme settings */ 
+			.badge_body {
+				position: absolute;
+				left: 0;
+				<?php if ( $cap->admin_bar_position == "hide" ) { ?>
+					top: 0; 
+				<?php } else { ?>
+					top: 28px; 
+				<?php } ?>	 
+				width: 150px;
+				height: 150px;
+				background: url('<?php 
+					if ( $cap->body_badge_img != "" ) { echo $cap->body_badge_img; } 
+					else { echo get_template_directory_uri().'/images/badge.png'; } 
+					?>') no-repeat scroll top left transparent;
+			}
+			.badge_text {
+				margin: 50px 10px 0 -13px;
+				text-align: center;
+				color: #<?php echo $cap->badge_text_color; ?>;
+				  -webkit-transform: rotate(-45deg);  /* Safari 3.1+, Chrome */
+				     -moz-transform: rotate(-45deg);  /* Firefox 3.5-15 */
+				      -ms-transform: rotate(-45deg);  /* IE9+ */
+				       -o-transform: rotate(-45deg);  /* Opera 10.5-12.00 */
+				          transform: rotate(-45deg);  /* Firefox 16+, Opera 12.50+ */			
+				/* ie7 and 8 */
+				margin: 7px 10px 0px 3px\9;
+				/* ie8 */
+			    -ms-filter: "progid:DXImageTransform.Microsoft.Matrix(M11=0.70710678, M12=0.70710678, M21=-0.70710678, M22=0.70710678,sizingMethod='auto expand')"; /* IE8 */
+				/* ie7 */
+				filter: progid:DXImageTransform.Microsoft.Matrix(M11=0.70710678, M12=0.70710678, M21=-0.70710678, M22=0.70710678,sizingMethod='auto expand');
+			}
+			.badge_text:hover {
+				color: #<?php echo $cap->badge_text_color_hover; ?>;
+			}
+			@media only screen and (max-width: 1150px) {
+				/* hide the body badge */
+				.body_badge_link, .badge_body {display:none;}
+			}
+		<?php endif; ?>
+		
 		nav ul li {
 			list-style: none;
 		}
@@ -210,42 +213,11 @@ function dynamic_css() {
 		}
 		#wp-admin-bar a { background-color: transparent; text-decoration: none; }
 		
-        .aligncenter { 
-            display: block;
-            margin-left: auto;
-            margin-right: auto; 
-        }
-
-        .alignleft {
-            float: left;
-            margin-right: 15px;
-        }
-
-        .alignright {
-            float: right;
-            margin-left: 15px;
-        }
-
-        div.post .wp-caption {
-            text-align: center;
-            background-color: #f3f3f3;
-            padding-top: 4px;
-            -moz-border-radius: 3px;
-            -webkit-border-radius: 3px;
-            border-radius: 3px;
-            margin-bottom:12px;
-        }
-
-        div.post dd.wp-caption p.wp-caption-text, div.post .wp-caption p.wp-caption-text {
-            font-size: 0.9em;
-            line-height: 17px;
-            padding: 0 4px 5px 0;
-            margin: 0;
-        }
         .free-version-message{
             position: absolute;
             top: 105px;
         }	
+        
 	/* Header :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
 		
 		#header {

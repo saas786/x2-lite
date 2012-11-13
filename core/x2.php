@@ -185,9 +185,9 @@ class x2{
 	/** check if it's a child theme or parent theme and return the correct path */
 	function require_path($path){
 	if( get_template_directory() != get_stylesheet_directory() && is_file(get_stylesheet_directory() . $path) ): 	
-        return STYLESHEETPATH . $path;
+        return get_stylesheet_directory() . $path;
     else:
-        return TEMPLATEPATH . $path;
+        return get_template_directory() . $path;
     endif;
 	}
     
